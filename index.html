@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noted.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── SIDEBAR ─────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">Noted<span class="dot">.</span></div>
+
+      <button class="btn-new" id="btnNew">
+        <span class="plus">+</span> New Note
+      </button>
+
+      <div class="search-wrap">
+        <input
+          type="text"
+          id="searchInput"
+          class="search"
+          placeholder="Search notes..."
+        />
+      </div>
+
+      <div class="tags-label">TAGS</div>
+      <div class="tags-list" id="tagsList">
+        <!-- Tags injected by JS -->
+      </div>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="note-count"><span id="noteCount">0</span> notes</div>
+    </div>
+  </aside>
+
+  <!-- ── NOTES LIST ──────────────────────────────────── -->
+  <section class="notes-list" id="notesList">
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">✦</div>
+      <p>No notes yet.<br/>Hit <strong>+ New Note</strong> to start.</p>
+    </div>
+    <!-- Note cards injected by JS -->
+  </section>
+
+  <!-- ── EDITOR ──────────────────────────────────────── -->
+  <main class="editor" id="editor">
+    <div class="editor-placeholder" id="editorPlaceholder">
+      <div class="placeholder-icon">✦</div>
+      <p>Select a note or create a new one</p>
+    </div>
+
+    <div class="editor-content hidden" id="editorContent">
+      <div class="editor-toolbar">
+        <input
+          type="text"
+          id="noteTitle"
+          class="note-title-input"
+          placeholder="Note title..."
+        />
+        <div class="toolbar-actions">
+          <input
+            type="text"
+            id="noteTag"
+            class="tag-input"
+            placeholder="tag"
+          />
+          <button class="btn-save" id="btnSave">Save</button>
+          <button class="btn-delete" id="btnDelete">Delete</button>
+        </div>
+      </div>
+
+      <div class="editor-meta" id="editorMeta">
+        <!-- Date injected by JS -->
+      </div>
+
+      <textarea
+        id="noteBody"
+        class="note-body"
+        placeholder="Write your note here..."
+      ></textarea>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
